@@ -1,0 +1,36 @@
+# Dependabot version-update config, scaffolded by keelen.
+#
+# Weekly, grouped pull requests keep this repository's dependencies current.
+# Minor and patch updates are grouped into ONE pull request per ecosystem so the
+# volume stays low.
+#
+# NOTE: this file drives *version-update* pull requests only. *Security-update*
+# pull requests also need "Dependabot security updates" switched on in
+# Settings -> Code security (a repository toggle, not a file change).
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+    groups:
+      pip-minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+    groups:
+      github-actions-minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
