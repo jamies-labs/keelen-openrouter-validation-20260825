@@ -7,18 +7,18 @@ jobs:
   lint:
     runs-on: [self-hosted, linux, x64, keelen]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@v5
       - run: uv run ruff check .
   typecheck:
     runs-on: [self-hosted, linux, x64, keelen]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@v5
       - run: uv run mypy src
   test:
     runs-on: [self-hosted, linux, x64, keelen]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@v5
       - run: uv run pytest -x
